@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <style>
+       .mainpage{
+            background-color: rgb(112, 139, 112);
+            width:100vw;
+            height:100vh;
+            position: relative;
+   }
+       .index{
+            background-color: beige;
+            Width: 50vw;
+            Height: 60vh;
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%, -50%);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+   }
+        .heading{
+          color:black;
+          text-align: centre;
+          font-size: medium;
+          padding-left: 20px;
+          padding-top: 100px;
+        }
+        .info{
+          background-color: bisque;
+          align-content: center;
+        }
+        p{
+            color: black;
+            font-size:medium;
+            font-weight: bold;
+            text-align: center;
+        }
+        label{
+            font-weight: bold;
+            color: red;
+            display:block;
+        }
+        input{
+            border-radius: 2px;
+            display:block
+            
+        }
+        /* form{
+           display:flex;
+           justify-content: center;
+        } */
+    </style>
+    <head>
+
+    </head>
+    <body>
+        <div class="mainpage">
+            <div class="index">
+                <div class="heading">
+                    <h1>Fill out the Form!</h1>
+                    <p></p>
+                </div>
+                <div>
+                    <form action="{{url_for('predict')}}" method="POST">
+                 
+                        <label for="BHK">Number of Bedrooms</label>
+                        <input type="text" id="BHK" name="BHK" placeholder="1">
+                      
+                        <label for="Size">Size</label>
+                        <input type="text" id="Size" name="Size" placeholder="Between(1-1000)">
+    
+                        <label for="Area Type">Area Type</label>
+                        <select id="Area Type" name="Area Type">
+                            <option value="0">Built Area</option>
+                            <option value="1">Carpet Area</option>
+                            <option value="2">Super Area</option>
+                        </select>
+    
+                        <label for="City">City</label>
+                        <select id="City" name="City">
+                            <option value="0">Bangalore</option>
+                            <option value="1">Chennai</option>
+                            <option value="2">Delhi</option>
+                            <option value="3">Hyderabad</option>
+                            <option value="4">Kolkata</option>
+                            <option value="5">Mumbai</option>
+                        </select>
+                    
+                        <label for="Furnishing Status">Furnishing Status</label>
+                        <select id="Furnishing Status" name="Furnishing Status">
+                            <option value="0">Furnished</option>
+                            <option value="1">Semi-Furnished</option>
+                            <option value="2">Unfurnished</option>
+                        </select>
+    
+                        <label for="Tenant Preferred">Tenant Preferred</label>
+                        <select id="Tenant Preferred" name="Tenant Preferred">
+                            <option value="0">Bachelors</option>
+                            <option value="1">Bachelors/Family</option>
+                            <option value="2">Family</option>
+                        </select>
+                        
+                        <label for="Bathroom">Number of Bathrooms</label>
+                        <input type="text" id="Bathroom" name="Bathroom" placeholder="1">
+    
+                        <label for="Point of Contact">Point of Contact</label>
+                        <select id="Point of Contact" name="Point of Contact">
+                            <option value="0">Contact Agent</option>
+                            <option value="1">Contact Builder</option>
+                            <option value="2">Contact Owner</option>
+                        </select>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+            {{prediction_text}}
+        </div>
+        <!-- <div class = 'Heading'>
+            <h1 class="heading">House Rent Prediction</h1>
+        </div>
+        <div class="model">
+            <div></div>
+            <div class=" info">
+                <p>Enter the details below</p>
+                <form action="{{url_for('predict')}}" method="POST">
+                 
+                    <label for="BHK">Number of Bedrooms</label>
+                    <input type="text" id="BHK" name="BHK" placeholder="1">
+                  
+                    <label for="Size">Size</label>
+                    <input type="text" id="Size" name="Size" placeholder="Between(1-1000)">
+
+                    <label for="Area Type">Area Type</label>
+                    <select id="Area Type" name="Area Type">
+                        <option value="0">Built Area</option>
+                        <option value="1">Carpet Area</option>
+                        <option value="2">Super Area</option>
+                    </select>
+
+                    <label for="City">City</label>
+                    <select id="City" name="City">
+                        <option value="0">Bangalore</option>
+                        <option value="1">Chennai</option>
+                        <option value="2">Delhi</option>
+                        <option value="3">Hyderabad</option>
+                        <option value="4">Kolkata</option>
+                        <option value="5">Mumbai</option>
+                    </select>
+                
+                    <label for="Furnishing Status">Furnishing Status</label>
+                    <select id="Furnishing Status" name="Furnishing Status">
+                        <option value="0">Furnished</option>
+                        <option value="1">Semi-Furnished</option>
+                        <option value="2">Unfurnished</option>
+                    </select>
+
+                    <label for="Tenant Preferred">Tenant Preferred</label>
+                    <select id="Tenant Preferred" name="Tenant Preferred">
+                        <option value="0">Bachelors</option>
+                        <option value="1">Bachelors/Family</option>
+                        <option value="2">Family</option>
+                    </select>
+                    
+                    <label for="Bathroom">Number of Bathrooms</label>
+                    <input type="text" id="Bathroom" name="Bathroom" placeholder="1">
+
+                    <label for="Point of Contact">Point of Contact</label>
+                    <select id="Point of Contact" name="Point of Contact">
+                        <option value="0">Contact Agent</option>
+                        <option value="1">Contact Builder</option>
+                        <option value="2">Contact Owner</option>
+                    </select>
+                    <input type="submit" value="Submit">
+                </form>
+                {{prediction_text}}
+            </div>
+            <div></div>
+        </div> -->
+    </body>
+</html>
