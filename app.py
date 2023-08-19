@@ -17,7 +17,7 @@ def predict():
 
     prediction=model.predict(final_features)
 
-    return render_template('index.html', prediction_text='Rent has to be around Rs. {}'.format(prediction[0]))
+    return render_template('index.html', prediction_text='Rent has to be around Rs. {}'.format(round((prediction[0]),2)))
 
 if __name__ == "__main__":
     app.run(debug=True)
