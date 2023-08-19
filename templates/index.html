@@ -37,13 +37,22 @@
         }
         label{
             font-weight: bold;
-            color: red;
+            color: black;
+            margin-top: 10px;
             display:block;
         }
         input{
             border-radius: 2px;
             display:block
             
+        }
+        .submit-button{
+            margin-top: 10px;
+        }
+        p{
+            color:rgb(112, 139, 112);
+            text-align: left;
+            margin-left: -10px;
         }
         /* form{
            display:flex;
@@ -58,7 +67,7 @@
             <div class="index">
                 <div class="heading">
                     <h1>Fill out the Form!</h1>
-                    <p></p>
+                    <p>Fill the form and get the HOUSE RENT PREDICTION</p>
                 </div>
                 <div>
                     <form action="{{url_for('predict')}}" method="POST">
@@ -109,11 +118,12 @@
                             <option value="1">Contact Builder</option>
                             <option value="2">Contact Owner</option>
                         </select>
-                        <input type="submit" value="Submit">
+                        <input class = 'submit-button'type="submit" value="Submit">
                     </form>
                 </div>
+                {{prediction_text}}
             </div>
-            {{prediction_text}}
+            
         </div>
         <!-- <div class = 'Heading'>
             <h1 class="heading">House Rent Prediction</h1>
